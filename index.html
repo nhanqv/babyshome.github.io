@@ -27,6 +27,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js'></script>
+	
 	<script type='text/javascript'>    
 	  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1L0ILv0bHKfkISg7AzRGlctW5aRFsT2EdeCqgwTQBKLg/edit?usp=sharing';
 
@@ -38,8 +40,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	  function showInfo(data, tabletop) {
 		alert('Successfully processed!')
+		alert(url("id"))
 		console.log(data);
-		$("#HoTen").text(data[jQuery.url.param("id")].HoTen);
+		$("#HoTen").text(data[0].HoTen);
 		$("#Lop").text(data[0].Lop);
 		$("#NgaySinh").text(data[0].NgaySinh);
 		$("#NhanTin").attr("href", "sms:" + data[0].SDT)
