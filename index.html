@@ -26,11 +26,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js'></script>
 	<script type='text/javascript'>    
 	  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1L0ILv0bHKfkISg7AzRGlctW5aRFsT2EdeCqgwTQBKLg/edit?usp=sharing';
 
-
-		
 	  function init() {
 		Tabletop.init( { key: publicSpreadsheetUrl,
 						 callback: showInfo,
@@ -39,16 +38,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	  function showInfo(data, tabletop) {
 		alert('Successfully processed!')
-			  $.urlParam = function(name){
-			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-			if (results==null) {
-			   return null;
-			}
-			return decodeURI(results[1]) || 0;
-		}
-		alert($.urlParam['id'])
 		console.log(data);
-		$("#HoTen").text(data[$.urlParam["id"]].HoTen);
+		$("#HoTen").text(data[jQuery.url.param("id")].HoTen);
 		$("#Lop").text(data[0].Lop);
 		$("#NgaySinh").text(data[0].NgaySinh);
 		$("#NhanTin").attr("href", "sms:" + data[0].SDT)
