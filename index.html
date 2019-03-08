@@ -29,6 +29,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script type='text/javascript'>    
 	  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1L0ILv0bHKfkISg7AzRGlctW5aRFsT2EdeCqgwTQBKLg/edit?usp=sharing';
 
+	  $.urlParam = function(name){
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			if (results==null) {
+			   return null;
+			}
+			return decodeURI(results[1]) || 0;
+		}
+		
 	  function init() {
 		Tabletop.init( { key: publicSpreadsheetUrl,
 						 callback: showInfo,
@@ -39,13 +47,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- alert('Successfully processed!') -->
 		alert(window.location.href)
 		console.log(data);
-		$("#HoTen").text(data[0].HoTen);
+		$("#HoTen").text(data[$.urlParam["id"]].HoTen);
 		$("#Lop").text(data[0].Lop);
 		$("#NgaySinh").text(data[0].NgaySinh);
 		$("#NhanTin").attr("href", "sms:" + data[0].SDT)
 		$("#GoiDien").attr("href", "tel:" + data[0].SDT)
 		$("#Album").attr("href", data[0].Album)
 	  }
+	  
+		
 
 	  window.addEventListener('DOMContentLoaded', init)
 	</script>
