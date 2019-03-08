@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	  function showInfo(data, tabletop) {
 		<!-- alert('Successfully processed!') -->
-		alert(window.location.href)
+		alert($.urlParam["id"])
 		console.log(data);
 		$("#HoTen").text(data[$.urlParam["id"]].HoTen);
 		$("#Lop").text(data[0].Lop);
