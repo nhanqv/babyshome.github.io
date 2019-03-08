@@ -39,14 +39,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  }
 
 	  function showInfo(data, tabletop) {
-		alert('Successfully processed!')
 		console.log(data);
-		$("#HoTen").text(data[parseInt(url("?myid"))].HoTen);
-		$("#Lop").text(data[0].Lop);
-		$("#NgaySinh").text(data[0].NgaySinh);
-		$("#NhanTin").attr("href", "sms:" + data[0].SDT)
-		$("#GoiDien").attr("href", "tel:" + data[0].SDT)
-		$("#Album").attr("href", data[0].Album)
+		var myid = parseInt(url("?myid"))
+		$("#HoTen").text(data[myid].HoTen);
+		$("#Lop").text(data[myid].Lop);
+		$("#NgaySinh").text(data[myid].NgaySinh);
+		$("#NhanTin").attr("href", "sms:" + data[myid].SDT)
+		$("#GoiDien").attr("href", "tel:" + data[myid].SDT)
+		$("#Album").attr("href", data[myid].Album)
 	  }
 	  
 		
