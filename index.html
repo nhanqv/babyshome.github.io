@@ -1,0 +1,134 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Comely Profile Widget a Responsive Widget Template :: w3layouts</title>
+	<!-- Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta name="keywords" content="Comely Profile Widget Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script type='text/javascript'>    
+	  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1L0ILv0bHKfkISg7AzRGlctW5aRFsT2EdeCqgwTQBKLg/edit?usp=sharing';
+
+	  function init() {
+		Tabletop.init( { key: publicSpreadsheetUrl,
+						 callback: showInfo,
+						 simpleSheet: true } )
+	  }
+
+	  function showInfo(data, tabletop) {
+		<!-- alert('Successfully processed!') -->
+		console.log(data);
+		$("#HoTen").text(data[0].HoTen);
+		$("#Lop").text(data[0].Lop);
+		$("#NgaySinh").text(data[0].NgaySinh);
+		$("#NhanTin").attr("href", "sms:" + data[0].SDT)
+		$("#GoiDien").attr("href", "tel:" + data[0].SDT)
+		$("#Album").attr("href", data[0].Album)
+	  }
+
+	  window.addEventListener('DOMContentLoaded', init)
+	</script>
+	
+	<!--// Meta Tags -->
+	<!-- Custom Theme files -->
+	<link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //Custom Theme files -->
+	<!-- web font -->
+	
+<!-- 	<link href="//fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
+<!-- 	<link href="css/fonts1.css" rel="stylesheet">
+	<link href="css/fonts2.css" rel="stylesheet"> -->
+	<!-- //web font -->
+</head>
+
+<body>
+	<div class="main-agileits">
+		<div class="inner-w3-agile">
+			<!-- left section -->
+			<div class="left-section" style="background: url(images/left.jpg)no-repeat 0px 0px;background-size: cover;">
+				<div class="left-btns">
+					<a id="NhanTin" href="sms:0979652292" class="btn1">
+						<i class="fas fa-envelope"></i>Nhắn Tin</a>
+					<a id="GoiDien" href="tel:0979652292" class="btn2">
+						<i class="fa fa-phone fa-rotate-90"></i>Gọi Điện</a>
+				</div>
+			</div>
+			<!-- //left section -->
+			<!-- right section -->
+			<div class="right-w3-agile">
+				<div class="right-info">
+					<h2 id="HoTen"></h2>
+					<span class="designation">Lớp: <span id="Lop"></span></span>
+					<p class="para-wthree">Ngày sinh: <span id="NgaySinh"></span></p>
+					<p class="para-wthree">Cân nặng: <span id="CanNang">13</span> kg</p>
+					<p class="para-wthree">Chiều cao: <span id="ChieuCao">90</span> cm</p>
+<!-- 					<div class="social-w3layouts">
+						<ul>
+							<li>
+								<a href="#">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fab fa-google-plus-g"></i>
+								</a>
+							</li>
+						</ul>
+					</div> -->
+				</div>
+				<div class="right-grids-w3-agileits">
+					<div class="grids g1">
+						<h6>
+							<a id="Album" href="#">
+								Album Ảnh
+							</a>
+						</h6>
+					</div>
+					<div class="grids g2">
+						<h6>Học Phí</h6>
+					</div>
+					<div class="grids g3">
+						<h6>
+							<a href="../calendar/web/index.html">
+								Xin Nghỉ
+							</a>
+						</h6>
+					</div>
+				</div>
+			</div>
+			<!-- //right section -->
+		</div>
+	</div>
+	<!-- copyright-w3ls -->
+	<!-- //copyright-w3ls -->
+</body>
+
+</html>
