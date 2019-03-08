@@ -41,6 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  function showInfo(data, tabletop) {
 		console.log(data);
 		var myid = parseInt(url("?myid"))
+		alert(myid)
 		$("#HoTen").text(data[myid].HoTen);
 		$("#Lop").text(data[myid].Lop);
 		$("#NgaySinh").text(data[myid].NgaySinh);
